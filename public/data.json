@@ -1,0 +1,51 @@
+[
+  {
+    "_id": "623853b2614ad5aba311fdd1",
+    "description": "This book, as the author states in the introduction. ",
+    "price": "5.00",
+    "quantity": "490",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "Casey W"
+  },
+  {
+    "_id": "623853b2578e9e6ad1ae0dd5",
+   "description": "This is the clearest book I've ever read .",
+    "price": "5.00",
+    "quantity": "98",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "edsetiadi"
+  },
+  {
+    "_id": "623853b21fb149d2ee7b76c7",
+    "description": "I swear, I have never been this addicted.",
+     "price": "5.00",
+     "quantity": "100",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "Christophe Dawson"
+  },
+  {
+    "_id": "623853b2e91c8de578c9245e",
+     "description": "The book was well research and very informative.",
+      "price": "5.00",
+      "quantity": "700",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "Abdul"
+  },
+   {
+    "_id": "623853b2e91c8de578c9455e",
+     "description": "Aside from the few shia bias from the author.",
+      "price": "5.00",
+      "quantity": "120",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "Papatia Feauxzar"
+  },
+   {
+    "_id": "623853b2e91c8de578ce9245e",
+     "description": "It is impossible to write a book about the history of Muslim peoples .",
+    "price": "5.00",
+    "quantity": "620",
+    "imgage": "https://malamal.xyz/wp-content/uploads/2021/04/Impact-Drill-TG1061356-malamal.xyz_.jpg",
+    "name": "Ramazan Ali"
+  }
+  
+]

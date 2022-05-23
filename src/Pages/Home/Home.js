@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from '../Products/Products';
+import Products from '../Products/AvailableProducts';
 import Banner from './Banner';
 
 const Home = () => {

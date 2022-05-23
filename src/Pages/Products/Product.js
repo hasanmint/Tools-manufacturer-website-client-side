@@ -12,7 +12,7 @@ const Product = ({ product }) => {
                 <h3 className='text-center text-xl'>{quantity} Available (min-100)</h3>
                 <div className="text-xl text-center">${price}</div>
                 <div className="card-actions justify-center mt-2">
-                    <div className="btn btn-secondary text-white uppercase w-m">Purchase</div>
+                    <div className="btn btn-secondary text-white uppercase w-m">Order Now</div>
                 </div>
             </div>
         </div>

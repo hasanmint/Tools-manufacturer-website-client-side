@@ -1,10 +1,10 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,12 +16,17 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let errorMessage;
 
 
-    if (user || gUser) {
-        console.log(user || gUser);
-    }
+  useEffect(()=>{
+      if (user || gUser) {
+          navigate(from, { replace: true });
+      }
+  }, [user, gUser, from, navigate])
 
     const onSubmit = data => {
         console.log(data)
@@ -39,7 +44,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 my-14">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 my-14">
                 <div className="card-body">
                     <label className="text-center">

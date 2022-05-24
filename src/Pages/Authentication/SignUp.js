@@ -126,9 +126,7 @@ const SignUp = () => {
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
 
                                 </label>
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+
                             </div>
 
                             <div className="form-control mt-6">

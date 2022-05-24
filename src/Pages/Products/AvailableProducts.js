@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import OrderForm from './OrderDetails';
 import Product from './Product';
 
 const AvailableProducts = () => {
     const [products, setProducts] = useState([]);
-    const [order,setOrder]=useState([ ])
+    const [order, setOrder] = useState(null)
 
 
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/product')
             .then(Response => Response.json())
             .then(data => setProducts(data))
     }, [])
@@ -24,9 +25,15 @@ const AvailableProducts = () => {
                             <Product
                                 key={product._id}
                                 product={product}
+                                setOrder={setOrder}
                             ></Product>)
                     }
                 </div>
+
+                {order && <OrderForm
+                    order={order}
+                    setOrder={setOrder}
+                ></OrderForm>}
             </div>
 
         </>

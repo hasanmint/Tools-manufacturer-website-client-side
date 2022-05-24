@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='my-28'>
             <footer className="footer footer-center p-10 bg-accent-200 text-base-content rounded">
                 <div className="grid grid-flow-col gap-4">
                     <a className="link link-hover">Home</a>

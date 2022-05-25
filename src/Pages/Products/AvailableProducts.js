@@ -17,7 +17,7 @@ const AvailableProducts = () => {
         <>
             <div className="mx-auto px-12 my-28">
                 <div className='text-center my-10'>
-                    <h3 className='text-secondary text-5xl font-bold '>Our Products:{products.length} </h3>
+                    <h3 className='text-secondary text-4xl font-bold '>Our Product Tools</h3>
                 </div>
                 <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                     {

@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='my-28'>
+        <div className='my-14'>
             <footer className="footer footer-center p-10 bg-accent-200 text-base-content rounded">
                 <div className="grid grid-flow-col gap-4">
                     <a className="link link-hover">Home</a>
-                    <a className="link link-hover">Products</a>
+                    <a className="link link-hover">About Us</a>
                     <a className="link link-hover">Blogs</a>
-                    <a className="link link-hover">Blogs</a>
+                    <a className="link link-hover">Contact Us</a>
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">

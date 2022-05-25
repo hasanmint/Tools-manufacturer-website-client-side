@@ -27,7 +27,7 @@ const Product = ({ product, setOrder }) => {
                 </h3>
                 <div className="text-xl text-center">${price}</div>
                 <div className="card-actions justify-center mt-2">
-                    <label htmlhtmlFor="booking-modal"
+                    <label htmlFor="booking-modal"
                         disabled={quantity <= 99}
                         onClick={() => setOrder(product)}
                         className="btn btn-secondary text-white uppercase">Order Now</label>

@@ -10,7 +10,7 @@ import SignUp from './Pages/Authentication/SignUp';
 import AvailableProducts from './Pages/Products/AvailableProducts';
 import RequireAuth from './Pages/Authentication/RequireAuth';
 import OrderDetails from './Pages/Products/OrderDetails';
-import Reviews from './Pages/Reviews';
+import Reviews from './Pages/Home/Reviews';
 import Blogs from './Pages/Blogs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,6 +19,8 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import MyReview from './Pages/Dashboard/MyReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
+import RequireAdmin from './Pages/Authentication/RequireAdmin';
+import NotFound from './Shared/NotFound';
 
 function App() {
   return (
@@ -27,22 +29,22 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
           <Route path='/availableProducts' element={<AvailableProducts />} />
           <Route path='/orderdetails' element={<RequireAuth><OrderDetails /></RequireAuth>} />
 
-          <Route path="/dashboard" element={<Dashboard />} >
+          <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
             <Route index element={<MyOrder />} />
-            <Route path='review' element={<MyReview />} />
-            <Route path='profile' element={<MyProfile />} />
-            <Route path='users' element={<Users />} />
+            <Route path='myreview' element={<MyReview />} />
+            <Route path='myprofile' element={<MyProfile />} />
+            <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
           </Route>
-
-          <Route path='/dashboard' element={<Dashboard />} />
 
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+
+          <Route path='*' element={<NotFound />} />
+
         </Routes>
         <ToastContainer />
         <Footer></Footer>

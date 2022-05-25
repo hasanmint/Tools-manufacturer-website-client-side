@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import UserTable from './UserTable';
 
 const Users = () => {
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,8 @@ const Users = () => {
             </div>
             <div>
 
-                <div class="overflow-x-auto w-full">
-                    <table class="table w-full">
+                <div className="overflow-x-auto w-full">
+                    <table className="table w-full">
                         {/* <!-- head --> */}
                         <thead>
                             <tr>
@@ -41,6 +41,7 @@ const Users = () => {
                                         key={user._id}
                                         user={user}
                                         index={index}
+                                        refetch={refetch}
                                     ></UserTable>)
                             }
 

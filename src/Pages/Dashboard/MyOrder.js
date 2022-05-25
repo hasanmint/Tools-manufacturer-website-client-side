@@ -39,8 +39,8 @@ const MyOrder = () => {
                 My MyOrders:{orders.length}
             </div>
             <div >
-                <div class="overflow-x-auto">
-                    <table class="table w-full table-auto table-fixed">
+                <div className="overflow-x-auto">
+                    <table className="table w-full table-auto table-fixed">
 
                         <thead>
                             <tr>

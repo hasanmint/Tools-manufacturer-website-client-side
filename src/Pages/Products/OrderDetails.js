@@ -51,7 +51,7 @@ const OrderDetails = ({ order, setOrder }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlhtmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <div className="flex justify-center">
                         <div className="avatar">
                             <div className="w-22 h-20 rounded">

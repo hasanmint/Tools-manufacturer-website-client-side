@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const Navbar = () => {
@@ -10,6 +10,9 @@ const Navbar = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
     };
+    const { pathname } = useLocation();
+    console.log(pathname);
+
     const menuITems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
@@ -30,13 +33,12 @@ const Navbar = () => {
                             {menuITems}
                         </ul>
                     </div>
-                    <label htmlFor="my-drawer-2" tabIndex="0" className="btn btn-ghost">
+                    {pathname.includes("dashboard") && (<label htmlFor="my-drawer-2" tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                    </label>
-
+                    </label>)
+                    }
 
                     <Link to='/' className="btn btn-ghost normal-case text-xl center">Manufacturer</Link>
-
 
                 </div>
                 <div className="navbar-center hidden lg:flex">

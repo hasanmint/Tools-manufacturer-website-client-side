@@ -1,56 +1,40 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
+import Review from './Review';
 
 const Reviews = () => {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/review', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(Response => Response.json()));
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <>
             <section>
                 <div className='my-28'>
-                    <h3 className='text-secondary text-4xl font-bold text-center '>Our Review</h3>
+                    <h3 className='text-secondary text-4xl font-bold text-center '>Our Review :{reviews.length}</h3>
                 </div>
 
+
                 <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-12'>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <div className="avatar flex justify-center mt-5">
-                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">5 Star Review</h2>
-                            <p>Parts came on time fit like original parts.I like this products form this website.</p>
-                            <div >
-                                <p><b>By</b> Donald Vought</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <div className="avatar flex justify-center mt-5">
-                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">5 Star Review</h2>
-                            <p>Parts came on time fit like original parts.I like this products form this website.</p>
-                            <div >
-                                <p><b>By</b> Donald Vought</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <div className="avatar flex justify-center mt-5">
-                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">5 Star Review</h2>
-                            <p>Parts came on time fit like original parts.I like this products form this website.</p>
-                            <div >
-                                <p><b>By</b> Donald Vought</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                   
+                    {
+                        reviews.map((review, index) =>
+                            <Review
+                                key={review._id}
+                                review={review}
+                                index={index}
+                                refetch={refetch}
+                            ></Review>)
+                    }
+
                 </div>
             </section>
 

@@ -36,7 +36,7 @@ const UpdateProfile = () => {
                         image: img
                     }
                     //send to databse
-                    fetch('http://localhost:5000/profile', {
+                    fetch('https://secret-fjord-61926.herokuapp.com/profile', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

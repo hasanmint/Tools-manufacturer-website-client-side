@@ -25,7 +25,7 @@ const OrderDetails = ({ order, setOrder }) => {
             address: event.target.address.value,
         }
 
-        fetch('http://localhost:5000/ordering', {
+        fetch('https://secret-fjord-61926.herokuapp.com/ordering', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

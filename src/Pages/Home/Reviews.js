@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import Review from './Review';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/review', {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://secret-fjord-61926.herokuapp.com/review', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,8 @@ const Reviews = () => {
 
 
                 <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-12'>
-                    
-                   
+
+
                     {
                         reviews.map((review, index) =>
                             <Review

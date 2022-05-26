@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import ProfileTable from './Profile/ProfileTable';
 
 const MyProfile = () => {
-    const { data: profiles, isLoading, refetch } = useQuery('profiles', () => fetch('http://localhost:5000/profile', {
+    const { data: profiles, isLoading, refetch } = useQuery('profiles', () => fetch('https://secret-fjord-61926.herokuapp.com/profile', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

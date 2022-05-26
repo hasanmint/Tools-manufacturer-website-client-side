@@ -34,7 +34,7 @@ const AddReview = () => {
                         image: img
                     }
                     //send to databse
-                    fetch('http://localhost:5000/review', {
+                    fetch('https://secret-fjord-61926.herokuapp.com/review', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -8,7 +8,7 @@ const AvailableProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://secret-fjord-61926.herokuapp.com/product')
             .then(Response => Response.json())
             .then(data => setProducts(data))
     }, [])

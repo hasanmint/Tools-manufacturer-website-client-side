@@ -4,13 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Header from './Shared/Header';
 import Footer from './Shared/Footer';
-import Products from './Pages/Products/AvailableProducts';
 import Login from './Pages/Authentication/Login';
 import SignUp from './Pages/Authentication/SignUp';
 import AvailableProducts from './Pages/Products/AvailableProducts';
 import RequireAuth from './Pages/Authentication/RequireAuth';
 import OrderDetails from './Pages/Products/OrderDetails';
-import Reviews from './Pages/Home/Reviews';
 import Blogs from './Pages/Blogs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +22,8 @@ import NotFound from './Shared/NotFound';
 import AddProduct from './Pages/Dashboard/Product/AddProduct';
 import ManageProduct from './Pages/Dashboard/Product/ManageProduct';
 import AddReview from './Pages/Dashboard/Review/AddReview';
+import UpdateProfile from './Pages/Dashboard/Profile/UpdateProfile';
+
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
             <Route path='myreview' element={<MyReview />} />
             <Route path='addReview' element={<AddReview />} />
             <Route path='myprofile' element={<MyProfile />} />
+            <Route path='updateProfile' element={<UpdateProfile />} />
             <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
             <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
             <Route path='manageProduct' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />

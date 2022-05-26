@@ -1,12 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 
 
 const AddProduct = () => {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
+    const [user] = useAuthState(auth);
 
-    //image storage
     const imageStorageKey = '82bd68c688b4f0ac0676845ecacab923';
 
 
@@ -26,6 +28,7 @@ const AddProduct = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const product = {
+                        email: user.email,
                         name: data.name,
                         price: data.price,
                         quantity: data.quantity,
@@ -166,15 +169,14 @@ const AddProduct = () => {
                             {/* input file */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Product Name</span>
+                                    <span className="label-text">Product Description</span>
                                 </label>
 
 
                                 <textarea
                                     type="text"
-                                    className="textarea textarea-bordered"
-                                    placeholder="Description"
                                     className="textarea textarea-bordered w-full max-w-xs"
+                                    placeholder="Description"
                                     {...register("description", {
                                         required: {
                                             value: true,
@@ -192,7 +194,7 @@ const AddProduct = () => {
 
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary text-white" type='submit'>Sign UP</button>
+                                <button className="btn btn-primary text-white" type='submit'>Submit</button>
                             </div>
                         </form>
                     </div>

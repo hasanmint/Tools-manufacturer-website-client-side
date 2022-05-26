@@ -104,7 +104,7 @@ const Login = () => {
 
                             </label>
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <Link to='/resetpassword' className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
 

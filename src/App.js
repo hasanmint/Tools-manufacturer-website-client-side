@@ -23,6 +23,7 @@ import AddProduct from './Pages/Dashboard/Product/AddProduct';
 import ManageProduct from './Pages/Dashboard/Product/ManageProduct';
 import AddReview from './Pages/Dashboard/Review/AddReview';
 import UpdateProfile from './Pages/Dashboard/Profile/UpdateProfile';
+import ResetPassword from './Pages/Authentication/ResetPassword';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/resetpassword' element={<ResetPassword />} />
 
           <Route path='*' element={<NotFound />} />
 

@@ -31,7 +31,6 @@ const Users = () => {
                                 <th>SL</th>
                                 <th>Email</th>
                                 <th>Action</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>

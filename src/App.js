@@ -24,6 +24,7 @@ import ManageProduct from './Pages/Dashboard/Product/ManageProduct';
 import AddReview from './Pages/Dashboard/Review/AddReview';
 import UpdateProfile from './Pages/Dashboard/Profile/UpdateProfile';
 import ResetPassword from './Pages/Authentication/ResetPassword';
+import Payment from './Pages/Dashboard/Payment';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             <Route path='addReview' element={<AddReview />} />
             <Route path='myprofile' element={<MyProfile />} />
             <Route path='updateProfile' element={<UpdateProfile />} />
+            <Route path='payment/:id' element={<Payment />} />
             <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
             <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
             <Route path='manageProduct' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />

@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
+    console.log(user);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const reviewImgStorageKey = '82bd68c688b4f0ac0676845ecacab923';
 
